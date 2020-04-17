@@ -1,6 +1,7 @@
 package br.mack.ps2;
 
 import br.mack.ps2.persistencia.ContaBancariaDAOMySQL;
+import br.mack.ps2.persistencia.JogoDAOMySQL;
 
 import java.sql.*;
 import java.util.*;
@@ -30,6 +31,9 @@ public class App
                 case 2:
                     break;
                 case 3:
+                    JogoDAOMySQL mysqlDAOJogo = new JogoDAOMySQL();
+                    InterfaceUsuarioJogo interfaceUsuarioJogo = new InterfaceUsuarioJogo(mysqlDAOJogo);
+                    interfaceUsuarioJogo.iniciar();
                     break;
                 case 4:
                     System.out.println("Operação finalizada");
