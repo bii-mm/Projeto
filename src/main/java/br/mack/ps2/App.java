@@ -1,6 +1,7 @@
 package br.mack.ps2;
 
 import br.mack.ps2.persistencia.ContaBancariaDAOMySQL;
+import br.mack.ps2.persistencia.EmpregadoDAOMySQL;
 
 import java.sql.*;
 import java.util.*;
@@ -27,7 +28,11 @@ public class App
                     ContaBancariaDAOMySQL mysqlDAO = new ContaBancariaDAOMySQL();
                     InterfaceUsuario interfaceUsuario = new InterfaceUsuario(mysqlDAO);
                     interfaceUsuario.iniciar();
+                    break;
                 case 2:
+                    EmpregadoDAOMySQL mySQL = new EmpregadoDAOMySQL();
+                    InterfaceUsuarioEmpregado interfaceUsuarioEmpregado = new InterfaceUsuarioEmpregado();
+                    interfaceUsuarioEmpregado.iniciar();
                     break;
                 case 3:
                     break;

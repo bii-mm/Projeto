@@ -15,7 +15,7 @@ public class Empregado {
         this.salario = salario;
     }
 
-    public long getId_empregado() { return id_empregado; }
+    public long getId_empregado(long l) { return id_empregado; }
 
     public void setId_empregado(long id_empregado) {
         this.id_empregado = id_empregado;

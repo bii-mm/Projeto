@@ -1,5 +1,4 @@
 package br.mack.ps2.persistencia;
-import br.mack.ps2.entidades.ContaBancaria;
 import br.mack.ps2.entidades.Empregado;
 import java.util.*;
 import java.sql.*;
@@ -85,7 +84,7 @@ public class EmpregadoDAOMySQL implements EmpregadoDAO{
             stm.setString(1, empregado.getNome_emp());
             stm.setString(2, empregado.getCargo());
             stm.setLong(3, empregado.getSalario() );
-            stm.setLong(4, empregado.getId_empregado());
+            stm.setLong(4, empregado.getId_empregado(in.nextLong()));
 
             int registros = stm.executeUpdate();
 
@@ -113,7 +112,7 @@ public class EmpregadoDAOMySQL implements EmpregadoDAO{
             PreparedStatement stm = conexao.prepareStatement(deleteSQL);
 
 
-            stm.setLong(1, empregado.getId_empregado());
+            stm.setLong(1, empregado.getId_empregado(in.nextLong()));
 
             int registros = stm.executeUpdate();
 
