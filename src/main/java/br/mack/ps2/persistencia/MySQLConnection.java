@@ -2,7 +2,7 @@ package br.mack.ps2.persistencia;
 import java.sql.*;
 
 public class MySQLConnection {
-    String url = "jdbc:mysql://192.168.99.100:32777/projeto";
+    String url = "jdbc:mysql://192.168.99.100:32771/projeto";
     String usuario = "root";
     String senha = "root";
 
