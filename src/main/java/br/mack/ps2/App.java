@@ -30,8 +30,8 @@ public class App
                     interfaceUsuario.iniciar();
                     break;
                 case 2:
-                    EmpregadoDAOMySQL mySQL = new EmpregadoDAOMySQL();
-                    InterfaceUsuarioEmpregado interfaceUsuarioEmpregado = new InterfaceUsuarioEmpregado();
+                    EmpregadoDAOMySQL mysql = new EmpregadoDAOMySQL();
+                    InterfaceUsuarioEmpregado interfaceUsuarioEmpregado = new InterfaceUsuarioEmpregado(mysql);
                     interfaceUsuarioEmpregado.iniciar();
                     break;
                 case 3:
@@ -44,7 +44,7 @@ public class App
                     break;
             }
 
-        }while (opc != 4);
+        }while (opc != 5);
 
     }
 }

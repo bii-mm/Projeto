@@ -20,7 +20,6 @@ public class EmpregadoDAOMySQL implements EmpregadoDAO{
             stm.setString(2, empregado.getCargo());
             stm.setLong(3, empregado.getSalario());
 
-
             int registros = stm.executeUpdate();
 
             return  registros > 0;
@@ -57,7 +56,6 @@ public class EmpregadoDAOMySQL implements EmpregadoDAO{
                 empregado.setSalario(rs.getLong("salario"));
                 empregados.add(empregado);
             }
-
             return empregados;
 
         } catch (final SQLException ex) {
@@ -84,7 +82,7 @@ public class EmpregadoDAOMySQL implements EmpregadoDAO{
             stm.setString(1, empregado.getNome_emp());
             stm.setString(2, empregado.getCargo());
             stm.setLong(3, empregado.getSalario() );
-            stm.setLong(4, empregado.getId_empregado(in.nextLong()));
+            stm.setLong(4, empregado.getId_empregado());
 
             int registros = stm.executeUpdate();
 
@@ -112,7 +110,7 @@ public class EmpregadoDAOMySQL implements EmpregadoDAO{
             PreparedStatement stm = conexao.prepareStatement(deleteSQL);
 
 
-            stm.setLong(1, empregado.getId_empregado(in.nextLong()));
+            stm.setLong(1, empregado.getId_empregado());
 
             int registros = stm.executeUpdate();
 

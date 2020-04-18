@@ -1,14 +1,12 @@
 package br.mack.ps2;
-import br.mack.ps2.entidades.ContaBancaria;
 import br.mack.ps2.entidades.Empregado;
 import br.mack.ps2.persistencia.EmpregadoDAO;
-import java.sql.*;
 import java.util.*;
 public class InterfaceUsuarioEmpregado {
     EmpregadoDAO dao;
     Scanner in;
 
-    public InterfaceUsuario(EmpregadoDAO dao){
+    public InterfaceUsuarioEmpregado(EmpregadoDAO dao){
         this.dao = dao;
         this.in = new Scanner(System.in);
     }
@@ -29,8 +27,6 @@ public class InterfaceUsuarioEmpregado {
             System.out.print("Escolha uma opção:_ ");
             opc = in.nextInt();
 
-            in.nextLine();
-
             switch (opc) {
                 case 1:
                     this.create();
@@ -43,9 +39,6 @@ public class InterfaceUsuarioEmpregado {
                     break;
                 case 4:
                     this.delete();
-                    break;
-                case 5:
-                    System.out.println("Operação finalizada");
                     break;
                 default:
                     System.out.println("Opção Inválida");
@@ -61,7 +54,6 @@ public class InterfaceUsuarioEmpregado {
         System.out.println("\n--------- Novo Empregado ---------");
         System.out.print("\nInforme o Nome do Empregado: ");
         empregado.setNome_emp(in.nextLine());
-        in.nextLine();
 
         System.out.print("Informe o Cargo do Empregado: ");
         empregado.setCargo(in.nextLine());
@@ -98,7 +90,6 @@ public class InterfaceUsuarioEmpregado {
 
             System.out.print("\nDigite o ID do Empregado: ");
             empregado.setId_empregado(in.nextLong());
-            in.nextLine();
 
             System.out.print("Digite o Nome do Empregado: ");
             empregado.setNome_emp(in.nextLine());
@@ -132,7 +123,6 @@ public class InterfaceUsuarioEmpregado {
 
             System.out.print("Qual Empregado deseja remover? ");
             int opc = in.nextInt();
-            in.nextLine();
 
             if (opc==i) {
                 break;
