@@ -54,6 +54,7 @@ public class InterfaceUsuarioEmpregado {
         System.out.println("\n--------- Novo Empregado ---------");
         System.out.print("\nInforme o Nome do Empregado: ");
         empregado.setNome_emp(in.nextLine());
+        in.nextLine();
 
         System.out.print("Informe o Cargo do Empregado: ");
         empregado.setCargo(in.nextLine());
