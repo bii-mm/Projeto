@@ -17,7 +17,7 @@ public class InterfaceUsuarioEmpregado {
 
     private void imprimirMenu() {
         int opc = 0;
-        do {
+        while (true) {
             System.out.println("\n======== Menu ========");
             System.out.println("\t1. Criar Empregado");
             System.out.println("\t2. Consultar Empregado");
@@ -26,6 +26,9 @@ public class InterfaceUsuarioEmpregado {
             System.out.println("\t5. Sair");
             System.out.print("Escolha uma opção:_ ");
             opc = in.nextInt();
+
+            if(opc == 5)
+                break;
 
             switch (opc) {
                 case 1:
@@ -40,12 +43,13 @@ public class InterfaceUsuarioEmpregado {
                 case 4:
                     this.delete();
                     break;
+                case 5:
+                    break;
                 default:
                     System.out.println("Opção Inválida");
                     break;
             }
-
-        }while (opc != 5);
+        }
     }
 
     private void create() {

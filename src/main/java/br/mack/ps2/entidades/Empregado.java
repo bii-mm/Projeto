@@ -44,4 +44,14 @@ public class Empregado {
     public void setSalario(long salario) {
         this.salario = salario;
     }
+
+    @Override
+    public String toString() {
+        return "Empregado {" +
+                id_empregado + "\'" +
+                nome_emp + '\'' +
+                cargo + '\'' +
+                salario +
+                '}';
+    }
 }
